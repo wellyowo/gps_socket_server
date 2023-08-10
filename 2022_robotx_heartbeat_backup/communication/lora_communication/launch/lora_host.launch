@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <arg name="port" default="/dev/lora_arduino" />
+    <arg name="log" default="True" />
+    <arg name="timeout" default="3"/>
+    <arg name="n" default="1" />
+    <arg name="pd" default="0.2" />
+
+    <node name="lora_host_node" pkg="lora_communication" type="lora_host.py" output="screen" required="true">
+        <param name="port" value="$(arg port)" />
+        <param name="log" value="$(arg log)" />
+        <param name="timeout" value="$(arg timeout)" />
+        <param name="num_veh" value="$(arg n)" />
+        <param name="pulling_delay" value="$(arg pd)"/>
+    </node>
+
+    <!---node name="lora_point_node" pkg="lora_communication" type="lora_points_viz.py" output="screen" /-->
+</launch>

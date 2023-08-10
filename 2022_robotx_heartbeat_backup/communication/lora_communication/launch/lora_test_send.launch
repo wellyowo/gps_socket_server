@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="lora_communication" type="test_msg.py" name="test_msg" output="screen" >
+  </node>
+  <node pkg="lora_communication" type="sender_decoder.py" name="sender_decoder" output="screen" >
+  </node>
+</launch>
