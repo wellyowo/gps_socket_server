@@ -19,10 +19,13 @@ class gpssub():
 
         self.gps_sub = rospy.Subscriber('/wamv_gps', NavSatFix, self.gps_callback)
         self.compass_sub = rospy.Subscriber('/wamv_compass', Float64, self.compass_callback)
+
+
         self.HOST = host
         self.PORT = port
         socket.setdefaulttimeout(86400*7)
         self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.server.bind((self.HOST, self.PORT))
         self.server.listen(5)
         self.address = {}
@@ -43,6 +46,7 @@ class gpssub():
             #print('client is ', client)
             self.address[addr] = client
             print('connection from ', addr)
+            print(len(self.address), ' clients are connected')
         
 
     def broadcast(self):
