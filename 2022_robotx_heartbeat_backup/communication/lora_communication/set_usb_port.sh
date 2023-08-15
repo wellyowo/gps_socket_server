@@ -1,7 +1,0 @@
-sudo bash -c 'echo "SUBSYSTEMS==\"usb\", ATTRS{idProduct}==\"0043\", ATTRS{manufacturer}==\"Arduino (www.arduino.cc)\", MODE=\"0777\", SYMLINK+=\"lora_arduino\"" > /etc/udev/rules.d/50-subt_lora_port.rules'
-sudo bash -c 'echo "SUBSYSTEMS==\"usb\", ATTRS{idProduct}==\"7523\", ATTRS{product}==\"USB2.0-Serial\", MODE=\"0777\", SYMLINK+=\"lora_arduino\"" >> /etc/udev/rules.d/50-subt_lora_port.rules'
-sudo bash -c 'echo "SUBSYSTEMS==\"usb\", ATTRS{idProduct}==\"6001\", ATTRS{manufacturer}==\"FTDI\", ATTRS{serial}==\"FT2O5Z6I\", MODE=\"0777\", SYMLINK+=\"usb_glora\"" >> /etc/udev/rules.d/50-subt_lora_port.rules'
-sudo bash -c 'echo "SUBSYSTEMS==\"usb\", ATTRS{idProduct}==\"6001\", ATTRS{manufacturer}==\"FTDI\", ATTRS{serial}==\"FT3LEKWT\", MODE=\"0777\", SYMLINK+=\"usb_glora\"" >> /etc/udev/rules.d/50-subt_lora_port.rules'
-sudo bash -c 'echo "SUBSYSTEMS==\"usb\", ATTRS{idProduct}==\"6001\", ATTRS{manufacturer}==\"FTDI\", ATTRS{serial}==\"FT3LEN6L\", MODE=\"0777\", SYMLINK+=\"usb_glora\"" >> /etc/udev/rules.d/50-subt_lora_port.rules'
-sudo bash -c 'echo "SUBSYSTEMS==\"usb\", ATTRS{idProduct}==\"6001\", ATTRS{manufacturer}==\"FTDI\", ATTRS{serial}==\"FT1IIOAS\", MODE=\"0777\", SYMLINK+=\"usb_glora\"" >> /etc/udev/rules.d/50-subt_lora_port.rules'
-sudo udevadm trigger 
