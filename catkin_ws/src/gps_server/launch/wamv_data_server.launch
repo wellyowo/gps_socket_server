@@ -1,0 +1,10 @@
+<launch>
+    <!-- for simulation gps, compass -->
+    <!-- for real gps, compass -->
+    <!-- <remap from="/wamv/sensors/gps/gps/fix" to="/wamv_gps"/>
+    <remap from="" to="/wmav_compass"/>    -->
+    <node name="wamv_data_server" pkg="gps_server" type="gps_socket_server.py" output="screen">
+        <remap from="wamv_gps" to="wamv/sensors/gps/gps/fix"/>
+        <remap from="wamv_compass" to="gazebo_compass"/> 
+    </node>
+</launch>
