@@ -1,0 +1,8 @@
+prefix=/home/sam/gps_socket_server/catkin_ws/install
+
+Name: gps_server
+Description: Description of gps_server
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

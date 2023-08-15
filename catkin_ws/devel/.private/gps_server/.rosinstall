@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/sam/gps_socket_server/catkin_ws/devel/.private/gps_server/setup.sh
