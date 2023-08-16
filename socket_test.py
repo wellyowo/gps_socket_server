@@ -1,17 +1,5 @@
 import socket
-import threading
 import sys
-
-
-def receive():
-    while True:
-        try:
-            msg = client_socket.recv(BUFSIZE).decode()
-            print(msg)
-        except OSError:
-            break
-
-
 
 
 if __name__ == '__main__':
