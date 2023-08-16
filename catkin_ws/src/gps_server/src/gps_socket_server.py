@@ -12,8 +12,8 @@ class gpssub():
     def __init__(self, host, port):
         self.send_data = {
             "Time": datetime.datetime.strftime(datetime.datetime.now(), "%Y/%m/%d %H:%M:%S.%f")[:-3],
-            "latitude": None,
             "longitude": None,
+            "latitude": None,
             "compass": None
         }
 
