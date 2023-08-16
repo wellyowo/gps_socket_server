@@ -45,6 +45,7 @@ class gpssub():
             #print('addr is ', addr)
             #print('client is ', client)
             self.address[addr] = client
+            print(datetime.datetime.strftime(datetime.datetime.now(), "%Y/%m/%d %H:%M:%S"), end = ' ')
             print('connection from ', addr)
             print(len(self.address), ' clients are connected')
         
@@ -61,6 +62,7 @@ class gpssub():
                         disconnect.append(addr)
 
                 for addr in disconnect:
+                    print(datetime.datetime.strftime(datetime.datetime.now(), "%Y/%m/%d %H:%M:%S"), end = ' ')
                     print(addr, ' is disconnected')
                     del(self.address[addr])
                     print(len(self.address), ' clients are connected')
