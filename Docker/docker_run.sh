@@ -66,7 +66,7 @@ docker run \
     -v "/etc/localtime:/etc/localtime:ro" \
     -v "/dev:/dev" \
     -v "/var/run/docker.sock:/var/run/docker.sock" \
-    --name sam \
+    --name gps \
     --network host \
     --privileged \
     --security-opt seccomp=unconfined \
