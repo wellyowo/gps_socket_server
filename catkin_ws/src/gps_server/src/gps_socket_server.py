@@ -42,13 +42,41 @@ class gpssub():
     def accept_client(self):
         while True:
             client, addr = self.server.accept()
+            DOS_flag = False
+            for addr_ip in self.address.keys():
+                if addr[0] == addr_ip[0]:
+                    try:
+                        reject = "more than 1 client link with this IP, connection reject"
+                        client.send(reject.encode('utf-8'))
+                        time.sleep(5)
+                    except Exception as e:
+                        print("Error sending reject message:", str(e))
+                    finally:
+                        client.close()
+                    DOS_flag = True
+                else:
+                    pass
+
             #print('addr is ', addr)
             #print('client is ', client)
-            self.address[addr] = client
-            print(datetime.datetime.strftime(datetime.datetime.now(), "%Y/%m/%d %H:%M:%S"), end = ' ')
-            print('connection from ', addr)
-            print(len(self.address), ' clients are connected')
-        
+            if not DOS_flag:
+                self.address[addr] = client
+                print(datetime.datetime.strftime(datetime.datetime.now(), "%Y/%m/%d %H:%M:%S"), end = ' ')
+                print('connection from ', addr)
+                print(len(self.address), ' clients are connected')
+
+
+    # def accept_client(self):
+    #     while True:
+    #         client, addr = self.server.accept()
+    #         #print('addr is ', addr)
+    #         #print('client is ', client)
+    #         self.address[addr] = client
+    #         print(datetime.datetime.strftime(datetime.datetime.now(), "%Y/%m/%d %H:%M:%S"), end = ' ')
+    #         print('connection from ', addr)
+    #         print(len(self.address), ' clients are connected')
+
+
 
     def broadcast(self):
         while True:
